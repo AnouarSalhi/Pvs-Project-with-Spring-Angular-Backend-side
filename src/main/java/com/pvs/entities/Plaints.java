@@ -1,0 +1,41 @@
+package com.pvs.entities;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Plaints {
+    @Id
+    @GeneratedValue
+    private long id;
+    private boolean contreInconnu;
+    @Column(length = 45)
+    private String referencePlaints;
+    private Date datePlaints;
+    private Date dateEnregPlaints;
+    private Date dateFaits;
+    @Column(length = 45)
+    private String emplaceFaits;
+    @Column(length = 45)
+    private String sujetPlaints;
+
+    // RelationShips:
+
+    @ManyToOne
+    private TypePlaints typePlaints;
+    @ManyToOne
+    private SourcePlaints sourcePlaints;
+    @OneToMany(mappedBy = "plaints")
+    private Collection<PvsReponses>pvsReponses;
+    @OneToMany
+    private Collection<UserHasPlaints> userHasPlaints;
+
+}
