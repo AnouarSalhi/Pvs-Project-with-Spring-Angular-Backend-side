@@ -24,7 +24,7 @@ public class PvService {
     private PvRepository pvRepository;
 
     // get all pvs:
-    public List<Pv> getPvs(){
+    public List<Pv> getAll(){
         return pvRepository.findAll();
     }
 
@@ -34,19 +34,19 @@ public class PvService {
     }
 
     // Add new Pv:
-    public Pv addNewPv(Pv pv){
+    public Pv add(Pv pv){
         return pvRepository.save(pv);
 
     }
 
    // update an existing pv using its Id:
-    public Pv updatePv(@PathVariable(name = "id") Long id,@RequestBody Pv pv){
+    public Pv update(@PathVariable(name = "id") Long id,@RequestBody Pv pv){
         pv.setId(id);
         return pvRepository.save(pv);
     }
 
     // Delete Pv :
-    public void deletePv(Long id){
+    public void delete(Long id){
         pvRepository.deleteById(id);
     }
 }

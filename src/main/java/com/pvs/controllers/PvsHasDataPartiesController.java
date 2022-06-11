@@ -1,39 +1,39 @@
 package com.pvs.controllers;
 
 import com.pvs.entities.Pv;
-import com.pvs.repositories.PvRepository;
+import com.pvs.entities.PvsHasDataParties;
 import com.pvs.services.PvService;
+import com.pvs.services.PvsHasDataPartiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin(origins ="http://localhost:4200")
-@RequestMapping("/pv")
+@RequestMapping("/dataparties")
 @RestController
-public class PvController {
+public class PvsHasDataPartiesController {
 
     @Autowired
-    private PvService pvService;
+    private PvsHasDataPartiesService dataPartiesService;
 
     // get all pv:
     @GetMapping(path = "/all")
-    public List<Pv> getPvs() {
-        return pvService.getAll();
+    public List<PvsHasDataParties> getPvs() {
+        return dataPartiesService.getAll();
     }
 
 
     // add new pv
     @PostMapping(path = "/add")
-    public void NewPv(@RequestBody Pv pv){
-          pvService.add(pv);
+    public void NewPv(@RequestBody PvsHasDataParties pvsHasDataParties){
+        dataPartiesService.add(pvsHasDataParties);
     }
 
 
 
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable(name = "id") Long id){
-        pvService.delete(id);
+        dataPartiesService.delete(id);
     }
-
-
 }
