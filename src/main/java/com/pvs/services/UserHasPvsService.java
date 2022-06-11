@@ -1,2 +1,4 @@
-package com.pvs.services;public class UserHasPvsService {
+package com.pvs.services;
+
+public class UserHasPvsService {
 }

@@ -1,2 +1,7 @@
-package com.pvs.repositories;public interface UserHasPvsRepository {
+package com.pvs.repositories;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserHasPvsRepository  {
 }
