@@ -9,13 +9,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Roles {
+public class Roles implements Serializable {
     @Id
     private long id;
     @Column(length = 45)

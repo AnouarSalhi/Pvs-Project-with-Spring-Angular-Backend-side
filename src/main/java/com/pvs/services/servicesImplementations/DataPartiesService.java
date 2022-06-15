@@ -1,9 +1,7 @@
-package com.pvs.services;
+package com.pvs.services.servicesImplementations;
 
 import com.pvs.entities.DataParties;
-import com.pvs.entities.Pv;
 import com.pvs.repositories.DataPartiesRepository;
-import com.pvs.repositories.PvRepository;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

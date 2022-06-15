@@ -1,10 +1,7 @@
 package com.pvs.controllers;
 
 import com.pvs.entities.DataParties;
-import com.pvs.entities.Pv;
-import com.pvs.repositories.DataPartiesRepository;
-import com.pvs.services.DataPartiesService;
-import com.pvs.services.PvService;
+import com.pvs.services.servicesImplementations.DataPartiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

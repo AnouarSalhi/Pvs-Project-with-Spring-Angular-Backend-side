@@ -1,8 +1,7 @@
 package com.pvs.controllers;
 
 import com.pvs.entities.Pv;
-import com.pvs.repositories.PvRepository;
-import com.pvs.services.PvService;
+import com.pvs.services.ServicesInterfaces.PvServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +12,7 @@ import java.util.List;
 public class PvController {
 
     @Autowired
-    private PvService pvService;
+    private PvServiceInterface pvService;
 
     // get all pv:
     @GetMapping(path = "/all")

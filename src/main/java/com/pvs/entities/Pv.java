@@ -1,7 +1,6 @@
 package com.pvs.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,19 +21,19 @@ public class Pv implements Serializable {
     @GeneratedValue
     @Column(length=20)
     private long id;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne
     private TypeSourcePvs typeSourcePvs;
     // I commented this lines to keep it by default
     //@Column(length=20)
     //@JoinColumn(name = "sourcePvs",nullable = false)
     //@JsonIgnore
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne
     private SourcePvs sourcePvs;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
     @ManyToOne
     private TypePoliceJudic  typePoliceJudic;
+
     private int numEnvoi;
     private Date datePvs;
     private String heureRealisation;

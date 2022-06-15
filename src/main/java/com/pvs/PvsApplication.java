@@ -48,9 +48,9 @@ public class PvsApplication implements CommandLineRunner {
         typeSourcePvsRepository.save(new TypeSourcePvs(2,"data2",null,null));
         typeSourcePvsRepository.save(new TypeSourcePvs(3,"data3",null,null));
 
-        pvRepository.save(new Pv(1,tsp,sp,tpj,204,new Date(),null,true,"pv subject1",null,null));
-        pvRepository.save(new Pv(2,tsp,sp,tpj,678,new Date(),null,false,"pv subject2",null,null));
-        pvRepository.save(new Pv(3,tsp,sp,tpj,234,new Date(),null,true,"pv subject3",null,null));
+        pvRepository.save(new Pv(1,tsp,sp,tpj,204,new Date(),"13:56",true,"pv subject1",null,null));
+        pvRepository.save(new Pv(2,tsp,sp,tpj,678,new Date(),"23:45",false,"pv subject2",null,null));
+        pvRepository.save(new Pv(3,tsp,sp,tpj,234,new Date(),"09:34",true,"pv subject3",null,null));
 
     }
 }

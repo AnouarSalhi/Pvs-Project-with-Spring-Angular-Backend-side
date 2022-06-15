@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
@@ -12,8 +13,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class DataParties {
+public class DataParties implements Serializable {
     @Id
+    @GeneratedValue
     private long id;
 
     @Column(length = 45)
@@ -44,7 +46,7 @@ public class DataParties {
     private String nomDeMere;
 
     @Column(length = 45)
-    private String FilleDe;
+    private String filleDe;
 
     @Column(length = 45)
     private String dataPartieCol;
@@ -53,7 +55,7 @@ public class DataParties {
     private String profession;
 
     @Column(length = 45)
-    private String LieuDeTravail;
+    private String lieuDeTravail;
 
     @Column(length = 45)
     private String numFinan;

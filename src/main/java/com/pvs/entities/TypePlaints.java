@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class TypePlaints {
+public class TypePlaints implements Serializable {
     @Id
     @GeneratedValue
     private long id;

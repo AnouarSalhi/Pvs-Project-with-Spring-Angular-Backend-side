@@ -1,8 +1,6 @@
-package com.pvs.services;
+package com.pvs.services.servicesImplementations;
 
-import com.pvs.entities.TypePoliceJudic;
 import com.pvs.entities.TypeSourcePvs;
-import com.pvs.repositories.TypePoliceJudicRepository;
 import com.pvs.repositories.TypeSourcePvsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

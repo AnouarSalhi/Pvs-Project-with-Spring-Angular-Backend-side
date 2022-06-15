@@ -1,5 +1,6 @@
 package com.pvs.entities;
 
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,8 @@ public class SourcePvs implements Serializable {
     @Column(length=255)
     private String nom;
 
-    @OneToMany(mappedBy = "sourcePvs",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "sourcePvs")
     private Collection<Pv> pvs;
 
 }

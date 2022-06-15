@@ -1,9 +1,7 @@
 package com.pvs.controllers;
 
-import com.pvs.entities.Pv;
 import com.pvs.entities.SourcePvs;
-import com.pvs.repositories.SourcePvsRepository;
-import com.pvs.services.SourcePvsService;
+import com.pvs.services.servicesImplementations.SourcePvsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

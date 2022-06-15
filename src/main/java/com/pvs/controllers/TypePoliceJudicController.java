@@ -1,9 +1,7 @@
 package com.pvs.controllers;
 
-import com.pvs.entities.SourcePvs;
 import com.pvs.entities.TypePoliceJudic;
-import com.pvs.services.SourcePvsService;
-import com.pvs.services.TypePoliceJudicService;
+import com.pvs.services.servicesImplementations.TypePoliceJudicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -8,13 +8,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Traiteds {
+public class Traiteds implements Serializable {
     @Id
     private long id;
 

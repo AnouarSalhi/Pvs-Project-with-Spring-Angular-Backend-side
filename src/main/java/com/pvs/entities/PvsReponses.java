@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class PvsReponses {
+public class PvsReponses implements Serializable {
     @Id
     private long id;
     private Date numEnvoi;

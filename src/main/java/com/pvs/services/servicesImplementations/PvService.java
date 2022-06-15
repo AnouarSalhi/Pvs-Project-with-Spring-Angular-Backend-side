@@ -1,12 +1,12 @@
-package com.pvs.services;
+package com.pvs.services.servicesImplementations;
 
 import com.pvs.entities.Pv;
 import com.pvs.repositories.PvRepository;
+import com.pvs.services.ServicesInterfaces.PvServiceInterface;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +18,7 @@ import java.util.Optional;
 @Getter
 @Setter
 @Service
-public class PvService {
+public class PvService implements PvServiceInterface {
 
     @Autowired
     private PvRepository pvRepository;
