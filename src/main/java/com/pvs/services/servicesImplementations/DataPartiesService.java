@@ -2,6 +2,7 @@ package com.pvs.services.servicesImplementations;
 
 import com.pvs.entities.DataParties;
 import com.pvs.repositories.DataPartiesRepository;
+import com.pvs.services.ServicesInterfaces.DataPartiesServiceInterface;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,7 @@ import java.util.Optional;
 @Getter
 @Setter
 @Service
-public class DataPartiesService {
+public class DataPartiesService  implements DataPartiesServiceInterface {
 
     @Autowired
     private DataPartiesRepository dataPartiesRepository;
