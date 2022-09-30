@@ -1,5 +1,6 @@
 package com.pvs.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class SourcePlaints implements Serializable {
     private String nom;
 
     // RelationShips:
-
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "sourcePlaints")
     private Collection<Plaints> plaints;
 }

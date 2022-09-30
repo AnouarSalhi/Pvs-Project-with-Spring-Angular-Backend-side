@@ -1,6 +1,8 @@
 package com.pvs.services.servicesImplementations;
 
+import com.pvs.entities.DataParties;
 import com.pvs.entities.Pv;
+import com.pvs.repositories.DataPartiesRepository;
 import com.pvs.repositories.PvRepository;
 import com.pvs.services.ServicesInterfaces.PvServiceInterface;
 import lombok.Data;
@@ -22,6 +24,13 @@ public class PvService implements PvServiceInterface {
 
     @Autowired
     private PvRepository pvRepository;
+
+    @Autowired
+    private DataPartiesRepository dataPartiesRepository;
+    public Pv getPvByUuid(@PathVariable String uuid){
+        Pv pv= pvRepository.findByUuid(uuid);
+        return pv;
+    }
 
     // get all pvs:
     public List<Pv> getAll(){
@@ -49,4 +58,15 @@ public class PvService implements PvServiceInterface {
     public void delete(Long id){
         pvRepository.deleteById(id);
     }
+
+    public  void pvToDp( String numCart,int id){
+        Pv pv =pvRepository.findPvById(id);
+        DataParties dataParties=dataPartiesRepository.findByNumCart(numCart);
+        if (pv.getDataParties()!=null) {
+            pv.getDataParties().add(dataParties);
+            dataParties.getPv().add(pv);
+        }
+        //pvRepository.save(pv);
+    }
+
 }

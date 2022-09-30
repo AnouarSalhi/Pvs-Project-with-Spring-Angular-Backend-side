@@ -39,10 +39,11 @@ public class Pv implements Serializable {
     private String heureRealisation;
     private boolean contreInnconue;
     private String subjectPv;
+    private String uuid;
 
-    @OneToMany(mappedBy = "pv")
-    private Collection<UsersHasPvs> usersHasPvs;
 
-    @OneToMany(mappedBy = "pv")
-    private Collection<PvsHasDataParties> pvsHasDataParties;
+    @ManyToMany
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Collection<DataParties> DataParties;
+
 }

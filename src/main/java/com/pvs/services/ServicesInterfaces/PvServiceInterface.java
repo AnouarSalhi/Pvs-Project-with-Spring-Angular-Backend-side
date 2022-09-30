@@ -13,4 +13,7 @@ public interface PvServiceInterface {
     public Pv add(Pv pv);
     public Pv update(@PathVariable(name = "id") Long id,@RequestBody Pv pv);
     public void delete(Long id);
+    public Pv getPvByUuid(String uuid);
+
+    public  void pvToDp( String numCart,int id);
 }

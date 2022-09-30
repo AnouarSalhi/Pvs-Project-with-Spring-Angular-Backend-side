@@ -26,9 +26,6 @@ public class User implements Serializable {
     @ManyToOne
     private Roles roles;
 
-    @OneToMany(mappedBy = "user")
-    private Collection<UsersHasPvs> usersHasPvs;
 
-    @OneToMany(mappedBy = "user")
-    private Collection<UserHasPlaints> userHasPlaints;
+
 }

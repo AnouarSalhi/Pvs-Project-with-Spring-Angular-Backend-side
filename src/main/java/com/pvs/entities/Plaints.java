@@ -1,5 +1,6 @@
 package com.pvs.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,7 +37,9 @@ public class Plaints implements Serializable {
     private SourcePlaints sourcePlaints;
     @OneToMany(mappedBy = "plaints")
     private Collection<PvsReponses>pvsReponses;
-    @OneToMany
-    private Collection<UserHasPlaints> userHasPlaints;
+
+    @ManyToMany
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Collection<DataParties> DataParties;
 
 }

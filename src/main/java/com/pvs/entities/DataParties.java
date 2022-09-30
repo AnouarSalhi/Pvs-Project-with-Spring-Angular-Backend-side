@@ -78,9 +78,11 @@ public class DataParties implements Serializable {
     @ManyToOne
     private TypeCartIdents typeCartIdents;
     @ManyToOne
-    private VilleDeNaisses villeDeNaisses;
+    private VilleDeNaiss villeDeNaisses;
     @ManyToOne
     private Pays pays;
-    @OneToMany
-    private Collection<PvsHasDataParties> pvsHasDataParties;
+    @ManyToMany
+    private Collection<Pv> pv;
+    @ManyToMany
+    private Collection<Plaints> plaints;
 }

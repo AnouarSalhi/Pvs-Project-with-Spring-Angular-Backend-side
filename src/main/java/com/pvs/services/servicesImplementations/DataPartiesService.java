@@ -23,6 +23,11 @@ public class DataPartiesService  implements DataPartiesServiceInterface {
     @Autowired
     private DataPartiesRepository dataPartiesRepository;
 
+    @Override
+    public List<DataParties> getByListOfNumCarts(List<String> numCarts) {
+        return dataPartiesRepository.findByListOfNumCart(numCarts);
+    }
+
     // get all pvs:
     public List<DataParties> getAll(){
         return dataPartiesRepository.findAll();
@@ -33,15 +38,32 @@ public class DataPartiesService  implements DataPartiesServiceInterface {
         return dataPartiesRepository.findById(id);
     }
 
+    @Override
+    public DataParties getDataPartieByNumCart(String numCart) {
+        return dataPartiesRepository.findByNumCart(numCart);
+    }
+
     // Add new Pv:
     public DataParties add(DataParties dataPartie){
         return dataPartiesRepository.save(dataPartie);
 
     }
 
+    public List<DataParties> addList(List<DataParties>  dataParties){
+        return dataPartiesRepository.saveAll(dataParties);
+
+    }
+
     // update an existing pv using its Id:
     public DataParties update(@PathVariable(name = "id") Long id,@RequestBody DataParties dataPartie){
         dataPartie.setId(id);
+        return dataPartiesRepository.save(dataPartie);
+    }
+
+    @Override
+    public DataParties updateByNumCart(String numCart, DataParties dataPartie) {
+       DataParties dp= getDataPartieByNumCart(numCart);
+        dataPartie.setId(dp.getId());
         return dataPartiesRepository.save(dataPartie);
     }
 

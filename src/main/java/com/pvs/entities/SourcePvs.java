@@ -21,6 +21,11 @@ public class SourcePvs implements Serializable {
     @Column(length=255)
     private String nom;
 
+    public SourcePvs(String nom, Collection<Pv> pvs) {
+        this.nom = nom;
+        this.pvs = pvs;
+    }
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "sourcePvs")
     private Collection<Pv> pvs;

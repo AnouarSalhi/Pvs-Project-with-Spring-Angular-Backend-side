@@ -22,8 +22,4 @@ public class Traiteds implements Serializable {
     @Column(length=45)
     private String nom;
 
-    @OneToMany(mappedBy = "traiteds")
-    private Collection<UsersHasPvs> usersHasPvs;
-    @OneToMany(mappedBy = "traiteds")
-    private Collection<UserHasPlaints>userHasPlaints;
 }

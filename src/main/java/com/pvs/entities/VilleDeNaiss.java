@@ -7,26 +7,24 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.Collection;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class UsersHasPvs implements Serializable {
+public class VilleDeNaiss implements Serializable {
+
     @Id
     @GeneratedValue
     private long id;
+    private String nom;
 
-    // RelationShips:
+    // Relationships:
 
-    @ManyToOne
-    private Pv pv;
+    @OneToMany(mappedBy = "villeDeNaisses")
+    private Collection<DataParties> dataParties;
 
-    @ManyToOne
-    private User user;
-
-    @ManyToOne
-    private Traiteds traiteds;
 }

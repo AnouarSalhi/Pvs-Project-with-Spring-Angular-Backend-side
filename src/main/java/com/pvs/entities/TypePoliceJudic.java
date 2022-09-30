@@ -17,6 +17,12 @@ import java.util.Collection;
 @Getter
 @Entity
 public class TypePoliceJudic implements Serializable {
+    public TypePoliceJudic(String nom, Collection<Pv> pvs, Collection<PvsReponses> pvsReponses) {
+        this.nom = nom;
+        this.pvs = pvs;
+        this.pvsReponses = pvsReponses;
+    }
+
     @Id
     @GeneratedValue
     private long id;
